@@ -1,0 +1,61 @@
+name: HabitMind
+description: Minimalistic habit tracker.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 2.0.0+1
+
+environment:
+  sdk: '>=2.18.1 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_fonts: ^3.0.1
+  provider: ^6.0.3
+  shared_preferences: ^2.0.15
+  table_calendar: ^3.0.7
+  awesome_dialog: ^3.0.2
+  loader_overlay: ^2.1.0
+  introduction_screen: ^3.0.2
+  flutter_svg: ^1.1.5
+  url_launcher: ^6.1.6
+  package_info_plus: ^1.4.3+1
+  sqflite: ^2.1.0+1
+  path: ^1.8.2
+  fl_chart: ^0.55.2
+  just_audio: ^0.9.30
+  flutter_file_dialog: ^2.3.2
+  path_provider: ^2.0.11
+  awesome_notifications: ^0.7.4+1
+  timezone: ^0.9.0
+  flutter_colorpicker: ^1.0.3
+  flutter_launcher_icons: ^0.12.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+# For now mipmaps are used.
+flutter_icons:
+  image_path_android: "assets/images/icon.png"
+  image_path_ios: "assets/images/ios_icon.jpg"
+  adaptive_icon_foreground: "assets/images/android_foreground.png"
+  adaptive_icon_background: "#FFFFFF"
+  min_sdk_android: 21
+  android: true
+  ios: true
+  remove_alpha_ios: true
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/images/onboard/
+    - assets/sounds/
+    - assets/google_fonts/
