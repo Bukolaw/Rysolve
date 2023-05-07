@@ -9,7 +9,7 @@ import 'package:HabitMind/model/habit_data.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-class HabitMindModel {
+class habitMindModel {
   late Database db;
 
   Future<void> deleteEvent(int id, DateTime dateTime) async {

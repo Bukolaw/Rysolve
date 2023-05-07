@@ -6,13 +6,14 @@ import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:HabitMind/constants.dart';
 import 'package:HabitMind/habits/habit.dart';
 import 'package:HabitMind/model/backup.dart';
+import 'package:HabitMind/model/backup.dart';
 import 'package:HabitMind/model/habit_data.dart';
-import 'package:HabitMind/model/HabitMind_model.dart';
+import 'package:HabitMind/model/habit_model.dart';
 import 'package:HabitMind/notifications.dart';
 import 'package:HabitMind/statistics/statistics.dart';
 
 class HabitsManager extends ChangeNotifier {
-  final HabitMindModel _HabitMindModel = HabitMindModel();
+  final habitMindModel _habitMindModel = habitMindModel();
   final GlobalKey<ScaffoldMessengerState> _scaffoldKey =
       GlobalKey<ScaffoldMessengerState>();
 
@@ -33,8 +34,8 @@ class HabitsManager extends ChangeNotifier {
   }
 
   initModel() async {
-    await _HabitMindModel.initDatabase();
-    allHabits = await _HabitMindModel.getAllHabits();
+    await _habitMindModel.initDatabase();
+    allHabits = await _habitMindModel.getAllHabits();
     _isInitialized = true;
     notifyListeners();
   }
@@ -75,7 +76,7 @@ class HabitsManager extends ChangeNotifier {
       jsonDecode(json).forEach((element) {
         habits.add(Habit.fromJson(element));
       });
-      await _HabitMindModel.useBackup(habits);
+      await _habitMindModel.useBackup(habits);
       removeNotifications(allHabits);
       allHabits = habits;
       resetNotifications(allHabits);
@@ -127,16 +128,16 @@ class HabitsManager extends ChangeNotifier {
     Habit moved = allHabits.removeAt(oldIndex);
     allHabits.insert(newIndex, moved);
     updateOrder();
-    _HabitMindModel.updateOrder(allHabits);
+    _habitMindModel.updateOrder(allHabits);
     notifyListeners();
   }
 
   addEvent(int id, DateTime dateTime, List event) {
-    _HabitMindModel.insertEvent(id, dateTime, event);
+    _habitMindModel.insertEvent(id, dateTime, event);
   }
 
   deleteEvent(int id, DateTime dateTime) {
-    _HabitMindModel.deleteEvent(id, dateTime);
+    _habitMindModel.deleteEvent(id, dateTime);
   }
 
   addHabit(
@@ -170,7 +171,7 @@ class HabitsManager extends ChangeNotifier {
         accountant: accountant,
       ),
     );
-    _HabitMindModel.insertHabit(newHabit).then(
+    _habitMindModel.insertHabit(newHabit).then(
       (id) {
         newHabit.setId = id;
         allHabits.add(newHabit);
@@ -200,7 +201,7 @@ class HabitsManager extends ChangeNotifier {
     hab.habitData.sanction = habitData.sanction;
     hab.habitData.showSanction = habitData.showSanction;
     hab.habitData.accountant = habitData.accountant;
-    _HabitMindModel.editHabit(hab);
+    _habitMindModel.editHabit(hab);
     if (habitData.notification) {
       setHabitNotification(
           habitData.id!, habitData.notTime, 'HabitMind', habitData.title);
@@ -265,7 +266,7 @@ class HabitsManager extends ChangeNotifier {
   Future<void> deleteFromDB() async {
     if (toDelete.isNotEmpty) {
       disableHabitNotification(toDelete.first.habitData.id!);
-      _HabitMindModel.deleteHabit(toDelete.first.habitData.id!);
+      _habitMindModel.deleteHabit(toDelete.first.habitData.id!);
       toDelete.removeFirst();
     }
     if (toDelete.isNotEmpty) {

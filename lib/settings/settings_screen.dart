@@ -319,7 +319,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           ),
                           applicationName: 'HabitMind',
                           applicationVersion: _packageInfo.version,
-                          applicationLegalese: '©2022 HabitMind',
+                          applicationLegalese: '©2023 HabitMind',
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.only(top: 15),
