@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:HabitMind/settings/settings_manager.dart';
-import 'package:HabitMind/statistics/monthly_graph.dart';
-import 'package:HabitMind/statistics/statistics.dart';
+import 'package:rysolve/settings/settings_manager.dart';
+import 'package:rysolve/statistics/monthly_graph.dart';
+import 'package:rysolve/statistics/statistics.dart';
 import 'package:provider/provider.dart';
 
 class StatisticsCard extends StatelessWidget {

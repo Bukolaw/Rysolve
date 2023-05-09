@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:HabitMind/habits/habit.dart';
+import 'package:rysolve/habits/habit.dart';
 import 'package:path_provider/path_provider.dart';
 
 class Backup {

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:HabitMind/constants.dart';
-import 'package:HabitMind/habits/habits_manager.dart';
-import 'package:HabitMind/navigation/routes.dart';
-import 'package:HabitMind/statistics/empty_statistics_image.dart';
-import 'package:HabitMind/statistics/overall_statistics_card.dart';
-import 'package:HabitMind/statistics/statistics.dart';
-import 'package:HabitMind/statistics/statistics_card.dart';
+import 'package:rysolve/constants.dart';
+import 'package:rysolve/habits/habits_manager.dart';
+import 'package:rysolve/navigation/routes.dart';
+import 'package:rysolve/statistics/empty_statistics_image.dart';
+import 'package:rysolve/statistics/overall_statistics_card.dart';
+import 'package:rysolve/statistics/statistics.dart';
+import 'package:rysolve/statistics/statistics_card.dart';
 import 'package:provider/provider.dart';
 
 class StatisticsScreen extends StatefulWidget {
@@ -70,7 +70,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
             } else {
               return const Center(
                 child: CircularProgressIndicator(
-                  color: HabitMindColors.primary,
+                  color: HabitColors.primary,
                 ),
               );
             }

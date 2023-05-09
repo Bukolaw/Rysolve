@@ -1,11 +1,11 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:HabitMind/constants.dart';
-import 'package:HabitMind/habits/habit.dart';
-import 'package:HabitMind/habits/habits_manager.dart';
-import 'package:HabitMind/habits/in_button.dart';
-import 'package:HabitMind/helpers.dart';
-import 'package:HabitMind/settings/settings_manager.dart';
+import 'package:rysolve/constants.dart';
+import 'package:rysolve/habits/habit.dart';
+import 'package:rysolve/habits/habits_manager.dart';
+import 'package:rysolve/habits/in_button.dart';
+import 'package:rysolve/helpers.dart';
+import 'package:rysolve/settings/settings_manager.dart';
 import 'package:provider/provider.dart';
 
 class OneDayButton extends StatelessWidget {
@@ -72,7 +72,7 @@ class OneDayButton extends StatelessWidget {
         icon: Icon(
           Icons.chat_bubble_outline,
           semanticLabel: 'Comment',
-          color: HabitMindColors.orange,
+          color: HabitColors.orange,
         ),
       )
     ];
@@ -207,7 +207,7 @@ class OneDayButton extends StatelessWidget {
       btnOkText: "Save",
       btnCancelText: "Close",
       btnCancelColor: Colors.grey,
-      btnOkColor: HabitMindColors.primary,
+      btnOkColor: HabitColors.primary,
       btnCancelOnPress: () {},
       btnOkOnPress: () {
         Provider.of<HabitsManager>(context, listen: false).addEvent(

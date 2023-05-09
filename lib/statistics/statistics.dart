@@ -1,7 +1,7 @@
 import 'dart:collection';
 
-import 'package:HabitMind/constants.dart';
-import 'package:HabitMind/habits/habit.dart';
+import 'package:rysolve/constants.dart';
+import 'package:rysolve/habits/habit.dart';
 
 class StatisticsData {
   String title = "";

@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:HabitMind/constants.dart';
-import 'package:HabitMind/model/settings_data.dart';
-import 'package:HabitMind/notifications.dart';
-import 'package:HabitMind/themes.dart';
+import 'package:rysolve/constants.dart';
+import 'package:rysolve/model/settings_data.dart';
+import 'package:rysolve/notifications.dart';
+import 'package:rysolve/themes.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -56,12 +56,12 @@ class SettingsManager extends ChangeNotifier {
 
   void saveData() async {
     final SharedPreferences prefs = await _prefs;
-    prefs.setString('HabitMind_settings', jsonEncode(_settingsData));
+    prefs.setString('rysolve_settings', jsonEncode(_settingsData));
   }
 
   Future<void> loadData() async {
     final SharedPreferences prefs = await _prefs;
-    String? json = prefs.getString('HabitMind_settings');
+    String? json = prefs.getString('rysolve_settings');
     if (json != null) {
       _settingsData = SettingsData.fromJson(jsonDecode(json));
     }
@@ -69,17 +69,17 @@ class SettingsManager extends ChangeNotifier {
 
   ThemeData get getDark {
     if (_settingsData.theme != Themes.light) {
-      return HabitMindTheme.darkTheme;
+      return rysolveTheme.darkTheme;
     } else {
-      return HabitMindTheme.lightTheme;
+      return rysolveTheme.lightTheme;
     }
   }
 
   ThemeData get getLight {
     if (_settingsData.theme != Themes.dark) {
-      return HabitMindTheme.lightTheme;
+      return rysolveTheme.lightTheme;
     } else {
-      return HabitMindTheme.darkTheme;
+      return rysolveTheme.darkTheme;
     }
   }
 

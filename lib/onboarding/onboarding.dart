@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:HabitMind/constants.dart';
-import 'package:HabitMind/settings/settings_manager.dart';
+import 'package:rysolve/constants.dart';
+import 'package:rysolve/settings/settings_manager.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -75,7 +75,7 @@ class Onboarding extends StatelessWidget {
                 children: const [
                   Icon(
                     Icons.check,
-                    color: HabitMindColors.primary,
+                    color: HabitColors.primary,
                   ),
                   SizedBox(
                     width: 10,
@@ -92,7 +92,7 @@ class Onboarding extends StatelessWidget {
                 children: const [
                   Icon(
                     Icons.close,
-                    color: HabitMindColors.red,
+                    color: HabitColors.red,
                   ),
                   SizedBox(
                     width: 10,
@@ -109,7 +109,7 @@ class Onboarding extends StatelessWidget {
                 children: const [
                   Icon(
                     Icons.last_page,
-                    color: HabitMindColors.skip,
+                    color: HabitColors.skip,
                   ),
                   SizedBox(
                     width: 10,
@@ -126,7 +126,7 @@ class Onboarding extends StatelessWidget {
                 children: const [
                   Icon(
                     Icons.chat_bubble_outline,
-                    color: HabitMindColors.orange,
+                    color: HabitColors.orange,
                   ),
                   SizedBox(
                     width: 10,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:HabitMind/navigation/app_state_manager.dart';
+import 'package:rysolve/navigation/app_state_manager.dart';
 import 'package:provider/provider.dart';
 
 class EmptyListImage extends StatelessWidget {

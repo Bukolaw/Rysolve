@@ -1,15 +1,17 @@
+// ignore_for_file: camel_case_types
+
 import 'dart:async';
 import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
-import 'package:HabitMind/constants.dart';
-import 'package:HabitMind/habits/habit.dart';
-import 'package:HabitMind/helpers.dart';
-import 'package:HabitMind/model/habit_data.dart';
+import 'package:rysolve/constants.dart';
+import 'package:rysolve/habits/habit.dart';
+import 'package:rysolve/helpers.dart';
+import 'package:rysolve/model/habit_data.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-class habitMindModel {
+class rysolveModel {
   late Database db;
 
   Future<void> deleteEvent(int id, DateTime dateTime) async {
@@ -131,7 +133,8 @@ class habitMindModel {
 
   void _updateTableHabitsV2toV3(Batch batch) {
     batch.execute('ALTER TABLE habits ADD sanction TEXT DEFAULT "" NOT NULL');
-    batch.execute('ALTER TABLE habits ADD showSanction INTEGER DEFAULT 0 NOT NULL');
+    batch.execute(
+        'ALTER TABLE habits ADD showSanction INTEGER DEFAULT 0 NOT NULL');
     batch.execute('ALTER TABLE habits ADD accountant TEXT DEFAULT "" NOT NULL');
   }
 
@@ -177,7 +180,7 @@ class habitMindModel {
       print(databasesPath);
     }
     db = await openDatabase(
-      join(await getDatabasesPath(), 'HabitMind_db0.db'),
+      join(await getDatabasesPath(), 'rysolve_db0.db'),
       version: 3,
       onCreate: (db, version) {
         var batch = db.batch();

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:HabitMind/model/habit_data.dart';
+import 'package:rysolve/model/habit_data.dart';
 
 class AppStateManager extends ChangeNotifier {
   bool _statistics = false;

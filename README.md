@@ -1,8 +1,8 @@
-# HabitMind - Habit Tracking App
+# Rysolve - Habit Tracking App
 
-Introducing HabitMind, the habit tracker app that helps you create and maintain healthy habits for a better life. With its user-friendly interface, HabitMind makes it easy to track your daily routines and monitor your progress.
+Introducing Rysolve, the habit tracker app that helps you create and maintain healthy habits for a better life. With its user-friendly interface, Rysolve makes it easy to track your daily routines and monitor your progress.
 
-With HabitMind, you can customize your own habit list, set reminders, and add notes to help you stay motivated. Whether you're looking to improve your exercise routine, eat healthier, or simply adopt better habits, HabitMind is here to help you succeed. 
+With Rysolve, you can customize your own habit list, set reminders, and add notes to help you stay motivated. Whether you're looking to improve your exercise routine, eat healthier, or simply adopt better habits, Rysolve is here to help you succeed.
 
 It is built using the [Flutter](https://flutter.dev/) framework, a popular and powerful cross-platform development tool.
 
@@ -14,25 +14,8 @@ It is built using the [Flutter](https://flutter.dev/) framework, a popular and p
 - Add notes to help keep you motivated
 - And more!
 
-## Contributing
-
-We welcome contributions from the community to help make HabitMind even better! Whether you're a developer, designer, or just an enthusiastic user, there are many ways you can help. 
-
-Please read our [contributing guidelines](CONTRIBUTING.md) to learn how you can get involved and make an impact.
-
-## License
-
-HabitMind is released under the [GPL-3.0 license](LICENSE). Feel free to use, modify, and distribute it as you wish. 
-
 ## Acknowledgments
 
-Special thanks to [Flutter](https://flutter.dev/) and [Dart](https://dart.dev/) teams for creating such amazing tools. 
+Special thanks to [Flutter](https://flutter.dev/) and [Dart](https://dart.dev/) teams for creating such amazing tools.
 
-We hope you enjoy using HabitMind and find it helpful in building better habits for a better life!
-
-## Support
-
-If you like this project you can [buy me a coffee](https://www.buymeacoffee.com/nwhator)
-
-<a href="https://www.buymeacoffee.com/nwhator" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
+We hope you enjoy using Eysolve and find it helpful in building better habits for a better life!

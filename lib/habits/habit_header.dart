@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:HabitMind/constants.dart';
-import 'package:HabitMind/habits/habit.dart';
-import 'package:HabitMind/habits/habits_manager.dart';
+import 'package:rysolve/constants.dart';
+import 'package:rysolve/habits/habit.dart';
+import 'package:rysolve/habits/habits_manager.dart';
 import 'package:provider/provider.dart';
 
 class HabitHeader extends StatelessWidget {
@@ -30,7 +30,8 @@ class HabitHeader extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.fromLTRB(3, 0, 0, 0),
             child: Text(
-              Provider.of<HabitsManager>(context).getNameOfHabit(widget.habitData.id!),
+              Provider.of<HabitsManager>(context)
+                  .getNameOfHabit(widget.habitData.id!),
               style: const TextStyle(fontSize: 20),
               overflow: TextOverflow.ellipsis,
             ),
@@ -59,11 +60,12 @@ class HabitHeader extends StatelessWidget {
               decoration: BoxDecoration(
                   border: Border.all(
                     color: (_orangeStreak)
-                        ? HabitMindColors.orange
-                        : HabitMindColors.primary,
+                        ? HabitColors.orange
+                        : HabitColors.primary,
                   ),
-                  color:
-                      (_orangeStreak) ? HabitMindColors.orange : HabitMindColors.primary,
+                  color: (_orangeStreak)
+                      ? HabitColors.orange
+                      : HabitColors.primary,
                   borderRadius: const BorderRadius.all(Radius.circular(20)),
                   boxShadow: [
                     BoxShadow(

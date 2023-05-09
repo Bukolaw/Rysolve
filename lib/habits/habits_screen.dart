@@ -1,12 +1,12 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:HabitMind/constants.dart';
+import 'package:rysolve/constants.dart';
 import 'package:provider/provider.dart';
-import 'package:HabitMind/habits/calendar_column.dart';
-import 'package:HabitMind/habits/habits_manager.dart';
-import 'package:HabitMind/settings/settings_manager.dart';
-import 'package:HabitMind/navigation/navigation.dart';
+import 'package:rysolve/habits/calendar_column.dart';
+import 'package:rysolve/habits/habits_manager.dart';
+import 'package:rysolve/settings/settings_manager.dart';
+import 'package:rysolve/navigation/navigation.dart';
 
 class HabitsScreen extends StatefulWidget {
   static MaterialPage page() {
@@ -45,7 +45,7 @@ class _HabitsScreenState extends State<HabitsScreen> {
         return Scaffold(
           appBar: AppBar(
             title: const Text(
-              "HabitMind",
+              "rysolve",
               style: TextStyle(fontWeight: FontWeight.w700),
             ),
             backgroundColor: Colors.transparent,
@@ -116,11 +116,11 @@ class _HabitsScreenState extends State<HabitsScreen> {
       headerAnimationLoop: false,
       animType: AnimType.bottomSlide,
       title: "Notifications",
-      desc: "HabitMind needs permission to send notifications to work properly.",
+      desc: "rysolve needs permission to send notifications to work properly.",
       btnOkText: "Allow",
       btnCancelText: "Cancel",
       btnCancelColor: Colors.grey,
-      btnOkColor: HabitMindColors.primary,
+      btnOkColor: HabitColors.primary,
       btnCancelOnPress: () {},
       btnOkOnPress: () {
         AwesomeNotifications()

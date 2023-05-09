@@ -1,9 +1,11 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:HabitMind/constants.dart';
+import 'package:rysolve/constants.dart';
 
-class HabitMindTheme {
+class rysolveTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       useMaterial3: true,
@@ -14,7 +16,7 @@ class HabitMindTheme {
       colorScheme: ColorScheme.light(
         primaryContainer: Colors.white,
         secondaryContainer: Colors.grey[100],
-        primary: HabitMindColors.primary,
+        primary: HabitColors.primary,
         outline: const Color(0xFF505050),
       ),
       fontFamily: GoogleFonts.nunito().fontFamily,
@@ -42,7 +44,7 @@ class HabitMindTheme {
       colorScheme: const ColorScheme.dark(
         primaryContainer: Color(0xFF505050),
         secondaryContainer: Color(0xFF353535),
-        primary: HabitMindColors.primary,
+        primary: HabitColors.primary,
         outline: Colors.grey,
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
@@ -76,7 +78,7 @@ Color getSwitchTrackColor(Set<MaterialState> states) {
   }
 
   if (states.contains(MaterialState.selected)) {
-    return HabitMindColors.primary;
+    return HabitColors.primary;
   }
 
   return const Color(0xFF353535);

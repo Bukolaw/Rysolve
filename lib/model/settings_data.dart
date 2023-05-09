@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:HabitMind/constants.dart';
-import 'package:HabitMind/helpers.dart';
+import 'package:rysolve/constants.dart';
+import 'package:rysolve/helpers.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class SettingsData {
@@ -13,9 +13,9 @@ class SettingsData {
   bool soundEffects = true;
   bool showMonthName = true;
   bool seenOnboarding = false;
-  Color checkColor = HabitMindColors.primary;
-  Color failColor = HabitMindColors.red;
-  Color skipColor = HabitMindColors.skip;
+  Color checkColor = HabitColors.primary;
+  Color failColor = HabitColors.red;
+  Color skipColor = HabitColors.skip;
 
   SettingsData();
 
@@ -35,13 +35,13 @@ class SettingsData {
             (json['seenOnboarding'] != null) ? json['seenOnboarding'] : false,
         checkColor = (json['checkColor'] != null)
             ? Color(json['checkColor'])
-            : HabitMindColors.primary,
+            : HabitColors.primary,
         failColor = (json['failColor'] != null)
             ? Color(json['failColor'])
-            : HabitMindColors.red,
+            : HabitColors.red,
         skipColor = (json['skipColor'] != null)
             ? Color(json['skipColor'])
-            : HabitMindColors.skip;
+            : HabitColors.skip;
 
   Map<String, dynamic> toJson() => {
         'theme': theme.index,

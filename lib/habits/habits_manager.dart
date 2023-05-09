@@ -3,17 +3,16 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
-import 'package:HabitMind/constants.dart';
-import 'package:HabitMind/habits/habit.dart';
-import 'package:HabitMind/model/backup.dart';
-import 'package:HabitMind/model/backup.dart';
-import 'package:HabitMind/model/habit_data.dart';
-import 'package:HabitMind/model/habit_model.dart';
-import 'package:HabitMind/notifications.dart';
-import 'package:HabitMind/statistics/statistics.dart';
+import 'package:rysolve/constants.dart';
+import 'package:rysolve/habits/habit.dart';
+import 'package:rysolve/model/backup.dart';
+import 'package:rysolve/model/habit_data.dart';
+import 'package:rysolve/model/habit_model.dart';
+import 'package:rysolve/notifications.dart';
+import 'package:rysolve/statistics/statistics.dart';
 
 class HabitsManager extends ChangeNotifier {
-  final habitMindModel _habitMindModel = habitMindModel();
+  final rysolveModel _rysolveModel = rysolveModel();
   final GlobalKey<ScaffoldMessengerState> _scaffoldKey =
       GlobalKey<ScaffoldMessengerState>();
 
@@ -34,8 +33,8 @@ class HabitsManager extends ChangeNotifier {
   }
 
   initModel() async {
-    await _habitMindModel.initDatabase();
-    allHabits = await _habitMindModel.getAllHabits();
+    await _rysolveModel.initDatabase();
+    allHabits = await _rysolveModel.getAllHabits();
     _isInitialized = true;
     notifyListeners();
   }
@@ -76,7 +75,7 @@ class HabitsManager extends ChangeNotifier {
       jsonDecode(json).forEach((element) {
         habits.add(Habit.fromJson(element));
       });
-      await _habitMindModel.useBackup(habits);
+      await _rysolveModel.useBackup(habits);
       removeNotifications(allHabits);
       allHabits = habits;
       resetNotifications(allHabits);
@@ -90,7 +89,7 @@ class HabitsManager extends ChangeNotifier {
     for (var element in habits) {
       if (element.habitData.notification) {
         var data = element.habitData;
-        setHabitNotification(data.id!, data.notTime, 'HabitMind', data.title);
+        setHabitNotification(data.id!, data.notTime, 'rysolve', data.title);
       }
     }
   }
@@ -108,7 +107,7 @@ class HabitsManager extends ChangeNotifier {
         duration: const Duration(seconds: 3),
         content: Text(message),
         behavior: SnackBarBehavior.floating,
-        backgroundColor: HabitMindColors.red,
+        backgroundColor: HabitColors.red,
       ),
     );
   }
@@ -128,16 +127,16 @@ class HabitsManager extends ChangeNotifier {
     Habit moved = allHabits.removeAt(oldIndex);
     allHabits.insert(newIndex, moved);
     updateOrder();
-    _habitMindModel.updateOrder(allHabits);
+    _rysolveModel.updateOrder(allHabits);
     notifyListeners();
   }
 
   addEvent(int id, DateTime dateTime, List event) {
-    _habitMindModel.insertEvent(id, dateTime, event);
+    _rysolveModel.insertEvent(id, dateTime, event);
   }
 
   deleteEvent(int id, DateTime dateTime) {
-    _habitMindModel.deleteEvent(id, dateTime);
+    _rysolveModel.deleteEvent(id, dateTime);
   }
 
   addHabit(
@@ -171,12 +170,12 @@ class HabitsManager extends ChangeNotifier {
         accountant: accountant,
       ),
     );
-    _habitMindModel.insertHabit(newHabit).then(
+    _rysolveModel.insertHabit(newHabit).then(
       (id) {
         newHabit.setId = id;
         allHabits.add(newHabit);
         if (notification) {
-          setHabitNotification(id, notTime, 'HabitMind', title);
+          setHabitNotification(id, notTime, 'rysolve', title);
         } else {
           disableHabitNotification(id);
         }
@@ -201,10 +200,10 @@ class HabitsManager extends ChangeNotifier {
     hab.habitData.sanction = habitData.sanction;
     hab.habitData.showSanction = habitData.showSanction;
     hab.habitData.accountant = habitData.accountant;
-    _habitMindModel.editHabit(hab);
+    _rysolveModel.editHabit(hab);
     if (habitData.notification) {
       setHabitNotification(
-          habitData.id!, habitData.notTime, 'HabitMind', habitData.title);
+          habitData.id!, habitData.notTime, 'rysolve', habitData.title);
     } else {
       disableHabitNotification(habitData.id!);
     }
@@ -266,7 +265,7 @@ class HabitsManager extends ChangeNotifier {
   Future<void> deleteFromDB() async {
     if (toDelete.isNotEmpty) {
       disableHabitNotification(toDelete.first.habitData.id!);
-      _habitMindModel.deleteHabit(toDelete.first.habitData.id!);
+      _rysolveModel.deleteHabit(toDelete.first.habitData.id!);
       toDelete.removeFirst();
     }
     if (toDelete.isNotEmpty) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:HabitMind/settings/settings_manager.dart';
+import 'package:rysolve/settings/settings_manager.dart';
 import 'package:provider/provider.dart';
 
 class CalendarHeader extends StatelessWidget {

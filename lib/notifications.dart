@@ -1,24 +1,24 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:HabitMind/constants.dart';
+import 'package:rysolve/constants.dart';
 
 void initializeNotifications() {
   AwesomeNotifications().initialize(
     'resource://raw/res_app_icon',
     [
       NotificationChannel(
-          channelKey: 'app_notifications_HabitMind',
+          channelKey: 'app_notifications_rysolve',
           channelName: 'App notifications',
           channelDescription:
               'Notification channel for application notifications',
-          defaultColor: HabitMindColors.primary,
+          defaultColor: HabitColors.primary,
           importance: NotificationImportance.Max,
           criticalAlerts: true),
       NotificationChannel(
-          channelKey: 'habit_notifications_HabitMind',
+          channelKey: 'habit_notifications_rysolve',
           channelName: 'Habit notifications',
           channelDescription: 'Notification channel for habit notifications',
-          defaultColor: HabitMindColors.primary,
+          defaultColor: HabitColors.primary,
           importance: NotificationImportance.Max,
           criticalAlerts: true)
     ],
@@ -37,14 +37,14 @@ void resetAppNotificationIfMissing(TimeOfDay timeOfDay) async {
 }
 
 void setAppNotification(TimeOfDay timeOfDay) async {
-  _setupDailyNotification(0, timeOfDay, 'HabitMind',
-      'Do not forget to check your habits.', 'app_notifications_HabitMind');
+  _setupDailyNotification(0, timeOfDay, 'rysolve',
+      'Do not forget to check your habits.', 'app_notifications_rysolve');
 }
 
 void setHabitNotification(
     int id, TimeOfDay timeOfDay, String title, String desc) {
   _setupDailyNotification(
-      id, timeOfDay, title, desc, 'habit_notifications_HabitMind');
+      id, timeOfDay, title, desc, 'habit_notifications_rysolve');
 }
 
 void disableHabitNotification(int id) {

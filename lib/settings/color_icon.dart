@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
-import 'package:HabitMind/constants.dart';
+import 'package:rysolve/constants.dart';
 
 class ColorIcon extends StatefulWidget {
   const ColorIcon(
@@ -107,7 +107,7 @@ class _ColorIconState extends State<ColorIcon> {
                                         Colors.white),
                                 backgroundColor:
                                     MaterialStatePropertyAll<Color>(
-                                        HabitMindColors.primary),
+                                        HabitColors.primary),
                               ),
                               child: const Text('Done'),
                               onPressed: () {

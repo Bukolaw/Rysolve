@@ -1,12 +1,12 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:HabitMind/constants.dart';
-import 'package:HabitMind/habits/habits_manager.dart';
-import 'package:HabitMind/navigation/app_state_manager.dart';
-import 'package:HabitMind/navigation/routes.dart';
-import 'package:HabitMind/settings/color_icon.dart';
-import 'package:HabitMind/settings/settings_manager.dart';
+import 'package:rysolve/constants.dart';
+import 'package:rysolve/habits/habits_manager.dart';
+import 'package:rysolve/navigation/app_state_manager.dart';
+import 'package:rysolve/navigation/routes.dart';
+import 'package:rysolve/settings/color_icon.dart';
+import 'package:rysolve/settings/settings_manager.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
@@ -76,7 +76,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       btnOkText: "Restore",
       btnCancelText: "Cancel",
       btnCancelColor: Colors.grey,
-      btnOkColor: HabitMindColors.primary,
+      btnOkColor: HabitColors.primary,
       btnCancelOnPress: () {},
       btnOkOnPress: () async {
         await Provider.of<HabitsManager>(context, listen: false).loadBackup();
@@ -96,7 +96,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           useDefaultLoading: false,
           overlayWidget: const Center(
             child: CircularProgressIndicator(
-              color: HabitMindColors.primary,
+              color: HabitColors.primary,
             ),
           ),
           child: Scaffold(
@@ -230,7 +230,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     listen: false)
                                 .checkColor,
                             icon: Icons.check,
-                            defaultColor: HabitMindColors.primary,
+                            defaultColor: HabitColors.primary,
                             onPicked: (value) {
                               Provider.of<SettingsManager>(context,
                                       listen: false)
@@ -242,7 +242,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     listen: false)
                                 .failColor,
                             icon: Icons.close,
-                            defaultColor: HabitMindColors.red,
+                            defaultColor: HabitColors.red,
                             onPicked: (value) {
                               Provider.of<SettingsManager>(context,
                                       listen: false)
@@ -254,7 +254,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     listen: false)
                                 .skipColor,
                             icon: Icons.last_page,
-                            defaultColor: HabitMindColors.skip,
+                            defaultColor: HabitColors.skip,
                             onPicked: (value) {
                               Provider.of<SettingsManager>(context,
                                       listen: false)
@@ -317,9 +317,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             width: 55,
                             height: 55,
                           ),
-                          applicationName: 'HabitMind',
+                          applicationName: 'rysolve',
                           applicationVersion: _packageInfo.version,
-                          applicationLegalese: '©2023 HabitMind',
+                          applicationLegalese: '©2023 rysolve',
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.only(top: 15),
@@ -335,7 +335,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                       recognizer: TapGestureRecognizer()
                                         ..onTap = () async {
                                           final Uri url = Uri.parse(
-                                              'https://HabitMind.space/terms.html#terms');
+                                              'https://rysolve.space/terms.html#terms');
                                           if (await canLaunchUrl(url)) {
                                             await launchUrl(
                                               url,
@@ -353,7 +353,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                       recognizer: TapGestureRecognizer()
                                         ..onTap = () async {
                                           final Uri url = Uri.parse(
-                                              'https://HabitMind.space/terms.html#privacy');
+                                              'https://rysolve.space/terms.html#privacy');
                                           if (await canLaunchUrl(url)) {
                                             await launchUrl(
                                               url,
@@ -371,7 +371,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                       recognizer: TapGestureRecognizer()
                                         ..onTap = () async {
                                           final Uri url = Uri.parse(
-                                              'https://HabitMind.space/terms.html#disclaimer');
+                                              'https://rysolve.space/terms.html#disclaimer');
                                           if (await canLaunchUrl(url)) {
                                             await launchUrl(
                                               url,

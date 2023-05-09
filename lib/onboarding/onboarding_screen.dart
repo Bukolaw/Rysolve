@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:HabitMind/navigation/app_state_manager.dart';
-import 'package:HabitMind/navigation/routes.dart';
-import 'package:HabitMind/onboarding/onboarding.dart';
+import 'package:rysolve/navigation/app_state_manager.dart';
+import 'package:rysolve/navigation/routes.dart';
+import 'package:rysolve/onboarding/onboarding.dart';
 import 'package:provider/provider.dart';
 
 class OnboardingScreen extends StatefulWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:HabitMind/habits/calendar_header.dart';
-import 'package:HabitMind/habits/empty_list_image.dart';
-import 'package:HabitMind/habits/habit.dart';
-import 'package:HabitMind/habits/habits_manager.dart';
+import 'package:rysolve/habits/calendar_header.dart';
+import 'package:rysolve/habits/empty_list_image.dart';
+import 'package:rysolve/habits/habit.dart';
+import 'package:rysolve/habits/habits_manager.dart';
 import 'package:provider/provider.dart';
 
 class CalendarColumn extends StatelessWidget {

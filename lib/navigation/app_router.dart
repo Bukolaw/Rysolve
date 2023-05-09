@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:HabitMind/habits/edit_habit_screen.dart';
-import 'package:HabitMind/habits/habits_manager.dart';
-import 'package:HabitMind/habits/habits_screen.dart';
-import 'package:HabitMind/navigation/app_state_manager.dart';
-import 'package:HabitMind/navigation/routes.dart';
-import 'package:HabitMind/onboarding/onboarding_screen.dart';
-import 'package:HabitMind/settings/settings_manager.dart';
-import 'package:HabitMind/settings/settings_screen.dart';
-import 'package:HabitMind/splash_screen.dart';
-import 'package:HabitMind/statistics/statistics_screen.dart';
+import 'package:rysolve/habits/edit_habit_screen.dart';
+import 'package:rysolve/habits/habits_manager.dart';
+import 'package:rysolve/habits/habits_screen.dart';
+import 'package:rysolve/navigation/app_state_manager.dart';
+import 'package:rysolve/navigation/routes.dart';
+import 'package:rysolve/onboarding/onboarding_screen.dart';
+import 'package:rysolve/settings/settings_manager.dart';
+import 'package:rysolve/settings/settings_screen.dart';
+import 'package:rysolve/splash_screen.dart';
+import 'package:rysolve/statistics/statistics_screen.dart';
 
 class AppRouter extends RouterDelegate
     with ChangeNotifier, PopNavigatorRouterDelegateMixin {

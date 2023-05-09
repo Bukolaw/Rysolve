@@ -1,12 +1,12 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
-import 'package:HabitMind/constants.dart';
-import 'package:HabitMind/habits/habit_header.dart';
-import 'package:HabitMind/helpers.dart';
-import 'package:HabitMind/model/habit_data.dart';
-import 'package:HabitMind/navigation/app_state_manager.dart';
-import 'package:HabitMind/settings/settings_manager.dart';
+import 'package:rysolve/constants.dart';
+import 'package:rysolve/habits/habit_header.dart';
+import 'package:rysolve/helpers.dart';
+import 'package:rysolve/model/habit_data.dart';
+import 'package:rysolve/navigation/app_state_manager.dart';
+import 'package:rysolve/settings/settings_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -363,7 +363,7 @@ class HabitState extends State<Habit> {
                       width: 8,
                       height: 8,
                       decoration: const BoxDecoration(
-                        color: HabitMindColors.orange,
+                        color: HabitColors.orange,
                         shape: BoxShape.circle,
                       ),
                     ),

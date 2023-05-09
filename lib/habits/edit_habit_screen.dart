@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:HabitMind/constants.dart';
-import 'package:HabitMind/habits/habits_manager.dart';
-import 'package:HabitMind/model/habit_data.dart';
-import 'package:HabitMind/navigation/routes.dart';
-import 'package:HabitMind/widgets/text_container.dart';
+import 'package:rysolve/constants.dart';
+import 'package:rysolve/habits/habits_manager.dart';
+import 'package:rysolve/model/habit_data.dart';
+import 'package:rysolve/navigation/routes.dart';
+import 'package:rysolve/widgets/text_container.dart';
 import 'package:provider/provider.dart';
 
 class EditHabitScreen extends StatefulWidget {
@@ -97,7 +97,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                 Icons.delete,
                 semanticLabel: 'Delete',
               ),
-              color: HabitMindColors.red,
+              color: HabitColors.red,
               tooltip: 'Delete',
               onPressed: () {
                 Navigator.of(context).pop();

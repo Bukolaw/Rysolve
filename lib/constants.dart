@@ -20,7 +20,7 @@ enum Themes { device, light, dark }
 
 enum DayType { clear, check, fail, skip }
 
-class HabitMindColors {
+class HabitColors {
   static const Color primary = Color(0xFF09BF30);
   static const Color red = Color(0xFFF44336);
   static const Color skip = Color(0xFFFBC02D);

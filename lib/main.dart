@@ -1,29 +1,31 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:HabitMind/habits/habits_manager.dart';
-import 'package:HabitMind/navigation/app_router.dart';
-import 'package:HabitMind/navigation/app_state_manager.dart';
-import 'package:HabitMind/notifications.dart';
-import 'package:HabitMind/settings/settings_manager.dart';
+import 'package:rysolve/habits/habits_manager.dart';
+import 'package:rysolve/navigation/app_router.dart';
+import 'package:rysolve/navigation/app_state_manager.dart';
+import 'package:rysolve/notifications.dart';
+import 'package:rysolve/settings/settings_manager.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   addLicenses();
   runApp(
-    const HabitMind(),
+    const rysolve(),
   );
 }
 
-class HabitMind extends StatefulWidget {
-  const HabitMind({Key? key}) : super(key: key);
+class rysolve extends StatefulWidget {
+  const rysolve({Key? key}) : super(key: key);
 
   @override
-  State<HabitMind> createState() => _HabitMindState();
+  State<rysolve> createState() => _rysolveState();
 }
 
-class _HabitMindState extends State<HabitMind> {
+class _rysolveState extends State<rysolve> {
   final _appStateManager = AppStateManager();
   final _settingsManager = SettingsManager();
   final _habitManager = HabitsManager();
@@ -67,7 +69,7 @@ class _HabitMindState extends State<HabitMind> {
       ],
       child: Consumer<SettingsManager>(builder: (context, counter, _) {
         return MaterialApp(
-          title: 'HabitMind',
+          title: 'rysolve',
           scaffoldMessengerKey:
               Provider.of<HabitsManager>(context).getScaffoldKey,
           theme: Provider.of<SettingsManager>(context).getLight,
