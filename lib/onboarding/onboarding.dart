@@ -11,7 +11,7 @@ class Onboarding extends StatelessWidget {
   final List<PageViewModel> listPagesViewModel = [
     PageViewModel(
       titleWidget: const Text(
-        'Define your habits',
+        'Define your goals',
         style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
       ),
       image: SvgPicture.asset(
@@ -25,7 +25,7 @@ class Onboarding extends StatelessWidget {
           child: Column(
             children: [
               const Text(
-                'To better stick to your habits, you can define:',
+                'To better stick to your goals, you can define:',
                 style: TextStyle(fontSize: 18),
                 textAlign: TextAlign.center,
               ),
@@ -34,7 +34,7 @@ class Onboarding extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
                   Text(
-                    '1. Cue',
+                    '1. Goal',
                     style: TextStyle(fontSize: 18),
                   ),
                   SizedBox(height: 5),
@@ -153,7 +153,7 @@ class Onboarding extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Text(
-            'You can track your progress through the calendar view in every habit or on the statistics page.',
+            'Track your progress through the calendar view in every goal or on the statistics page.',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 18),
           ),

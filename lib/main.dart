@@ -69,7 +69,7 @@ class _rysolveState extends State<rysolve> {
       ],
       child: Consumer<SettingsManager>(builder: (context, counter, _) {
         return MaterialApp(
-          title: 'rysolve',
+          title: 'Rysolve',
           scaffoldMessengerKey:
               Provider.of<HabitsManager>(context).getScaffoldKey,
           theme: Provider.of<SettingsManager>(context).getLight,

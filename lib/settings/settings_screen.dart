@@ -31,9 +31,9 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsScreenState extends State<SettingsScreen> {
   PackageInfo _packageInfo = PackageInfo(
-    appName: 'Unknown',
-    packageName: 'Unknown',
-    version: 'Unknown',
+    appName: 'Rysolve',
+    packageName: 'Rysolve',
+    version: '1.0.0',
     buildNumber: 'Unknown',
     buildSignature: 'Unknown',
   );
@@ -317,9 +317,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             width: 55,
                             height: 55,
                           ),
-                          applicationName: 'rysolve',
+                          applicationName: 'Rysolve',
                           applicationVersion: _packageInfo.version,
-                          applicationLegalese: '©2023 rysolve',
+                          applicationLegalese: '©2023 Rysolve',
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.only(top: 15),
@@ -331,47 +331,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                       style: const TextStyle(
                                           color: Colors.blue,
                                           decoration: TextDecoration.underline),
-                                      text: "Terms and Conditions\n",
+                                      text: "Designed by Promise\n",
                                       recognizer: TapGestureRecognizer()
                                         ..onTap = () async {
                                           final Uri url = Uri.parse(
-                                              'https://rysolve.space/terms.html#terms');
-                                          if (await canLaunchUrl(url)) {
-                                            await launchUrl(
-                                              url,
-                                              mode: LaunchMode
-                                                  .externalApplication,
-                                            );
-                                          }
-                                        },
-                                    ),
-                                    TextSpan(
-                                      style: const TextStyle(
-                                          color: Colors.blue,
-                                          decoration: TextDecoration.underline),
-                                      text: "Privacy Policy\n",
-                                      recognizer: TapGestureRecognizer()
-                                        ..onTap = () async {
-                                          final Uri url = Uri.parse(
-                                              'https://rysolve.space/terms.html#privacy');
-                                          if (await canLaunchUrl(url)) {
-                                            await launchUrl(
-                                              url,
-                                              mode: LaunchMode
-                                                  .externalApplication,
-                                            );
-                                          }
-                                        },
-                                    ),
-                                    TextSpan(
-                                      style: const TextStyle(
-                                          color: Colors.blue,
-                                          decoration: TextDecoration.underline),
-                                      text: "Disclaimer\n",
-                                      recognizer: TapGestureRecognizer()
-                                        ..onTap = () async {
-                                          final Uri url = Uri.parse(
-                                              'https://rysolve.space/terms.html#disclaimer');
+                                              'https://github.com/nwhator');
                                           if (await canLaunchUrl(url)) {
                                             await launchUrl(
                                               url,

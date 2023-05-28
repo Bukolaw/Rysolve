@@ -234,7 +234,7 @@ class HabitsManager extends ChangeNotifier {
     _scaffoldKey.currentState!.showSnackBar(
       SnackBar(
         duration: const Duration(seconds: 3),
-        content: const Text("Habit deleted."),
+        content: const Text("Goal deleted."),
         behavior: SnackBarBehavior.floating,
         action: SnackBarAction(
           label: 'Undo',

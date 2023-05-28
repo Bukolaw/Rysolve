@@ -86,7 +86,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          (widget.habitData != null) ? 'Edit Habit' : 'Create Habit',
+          (widget.habitData != null) ? 'Edit Goal' : 'Create Goal',
         ),
         backgroundColor: Colors.transparent,
         iconTheme: Theme.of(context).iconTheme,
@@ -158,7 +158,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                     borderRadius: BorderRadius.circular(15),
                   ),
                   behavior: SnackBarBehavior.floating,
-                  content: const Text("The habit title can not be empty."),
+                  content: const Text("The goal title can not be empty."),
                 ),
               );
             }
@@ -179,7 +179,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                 TextContainer(
                   title: title,
                   hint: 'Exercise',
-                  label: 'Habit',
+                  label: 'Goal',
                 ),
                 Container(
                   margin:
@@ -214,7 +214,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                   title: const Padding(
                     padding: EdgeInsets.all(7.0),
                     child: Text(
-                      "Advanced habit building",
+                      "Advanced goal building",
                       style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold,
@@ -230,7 +230,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: const Center(
                         child: Text(
-                          "This section helps you better define your habits. You should define cue, routine, and reward for every habit.",
+                          "This section helps you better define your habits. You should define goals, routine, and reward for every goal.",
                           textAlign: TextAlign.left,
                         ),
                       ),
@@ -238,7 +238,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                     TextContainer(
                       title: cue,
                       hint: 'At 7:00AM',
-                      label: 'Cue',
+                      label: 'Goal',
                     ),
                     ListTile(
                       contentPadding:
@@ -274,7 +274,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                     TextContainer(
                       title: routine,
                       hint: 'Do 50 push ups',
-                      label: 'Routine',
+                      label: 'Task',
                     ),
                     TextContainer(
                       title: reward,
@@ -313,7 +313,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                     ),
                     const ListTile(
                       title: Text(
-                        "Habit contract",
+                        "Goal contract",
                         style: TextStyle(
                           fontSize: 18.0,
                           fontWeight: FontWeight.bold,
@@ -324,7 +324,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: const Center(
                         child: Text(
-                          "While positive reinforcement is recommended, some people may opt for a habit contract. A habit contract allows you to specify a sanction that will be imposed if you miss your habit, and may involve an accountant who helps supervise your goals.",
+                          "While positive reinforcement is recommended, some people may opt for a goal created. A goal contract allows you to specify a sanction that will be imposed if you miss your goal, and may involve an accountantability partner who helps supervise your goals.",
                           textAlign: TextAlign.left,
                         ),
                       ),
@@ -355,7 +355,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                             padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                             child: Tooltip(
                               message:
-                                  "The remainder of the sanction after a unsuccessful routine.",
+                                  "The remainder of the sanction after a uncompleted routine.",
                               child: Icon(
                                 Icons.info,
                                 semanticLabel: 'Tooltip',
@@ -369,8 +369,8 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                     ),
                     TextContainer(
                       title: accountant,
-                      hint: 'Dan',
-                      label: 'Accountant',
+                      hint: 'Promise',
+                      label: 'Accountability Partner',
                     ),
                     const SizedBox(
                       height: 110,

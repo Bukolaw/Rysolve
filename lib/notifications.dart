@@ -17,7 +17,7 @@ void initializeNotifications() {
       NotificationChannel(
           channelKey: 'habit_notifications_rysolve',
           channelName: 'Habit notifications',
-          channelDescription: 'Notification channel for habit notifications',
+          channelDescription: 'Notification channel for goal notifications',
           defaultColor: HabitColors.primary,
           importance: NotificationImportance.Max,
           criticalAlerts: true)
@@ -37,8 +37,8 @@ void resetAppNotificationIfMissing(TimeOfDay timeOfDay) async {
 }
 
 void setAppNotification(TimeOfDay timeOfDay) async {
-  _setupDailyNotification(0, timeOfDay, 'rysolve',
-      'Do not forget to check your habits.', 'app_notifications_rysolve');
+  _setupDailyNotification(0, timeOfDay, 'Rysolve',
+      'Do not forget to check your goals.', 'app_notifications_rysolve');
 }
 
 void setHabitNotification(

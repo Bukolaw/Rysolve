@@ -39,7 +39,7 @@ class OverallStatisticsCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text(
-                          "Habits:",
+                          "Goals:",
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,

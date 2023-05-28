@@ -45,7 +45,7 @@ class _HabitsScreenState extends State<HabitsScreen> {
         return Scaffold(
           appBar: AppBar(
             title: const Text(
-              "rysolve",
+              "Rysolve",
               style: TextStyle(fontWeight: FontWeight.w700),
             ),
             backgroundColor: Colors.transparent,
@@ -116,7 +116,7 @@ class _HabitsScreenState extends State<HabitsScreen> {
       headerAnimationLoop: false,
       animType: AnimType.bottomSlide,
       title: "Notifications",
-      desc: "rysolve needs permission to send notifications to work properly.",
+      desc: "Rysolve needs permission to send notifications to work properly.",
       btnOkText: "Allow",
       btnCancelText: "Cancel",
       btnCancelColor: Colors.grey,

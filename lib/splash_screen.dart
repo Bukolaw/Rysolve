@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
               width: 72,
             ),
             Text(
-              "rysolve",
+              "Rysolve",
               style: Theme.of(context).textTheme.headlineSmall,
             ),
           ],
