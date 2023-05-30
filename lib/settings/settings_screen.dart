@@ -331,19 +331,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                       style: const TextStyle(
                                           color: Colors.blue,
                                           decoration: TextDecoration.underline),
-                                      text: "Designed by Promise\n",
-                                      recognizer: TapGestureRecognizer()
-                                        ..onTap = () async {
-                                          final Uri url = Uri.parse(
-                                              'https://github.com/nwhator');
-                                          if (await canLaunchUrl(url)) {
-                                            await launchUrl(
-                                              url,
-                                              mode: LaunchMode
-                                                  .externalApplication,
-                                            );
-                                          }
-                                        },
                                     ),
                                   ],
                                 ),

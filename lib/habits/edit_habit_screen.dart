@@ -369,7 +369,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                     ),
                     TextContainer(
                       title: accountant,
-                      hint: 'Promise',
+                      hint: 'John Doe',
                       label: 'Accountability Partner',
                     ),
                     const SizedBox(
