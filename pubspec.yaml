@@ -27,7 +27,7 @@ dependencies:
   just_audio: ^0.9.30
   flutter_file_dialog: ^2.3.2
   path_provider: ^2.0.11
-  awesome_notifications: ^0.7.5
+  awesome_notifications: ^0.10.0
   timezone: ^0.9.0
   flutter_colorpicker: ^1.0.3
   flutter_launcher_icons: ^0.12.0
