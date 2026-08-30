@@ -12,8 +12,7 @@ void initializeNotifications() {
           channelDescription:
               'Notification channel for application notifications',
           defaultColor: HabitColors.primary,
-          importance: NotificationImportance.Max,
-          criticalAlerts: true),
+          importance: NotificationImportance.Max),
       NotificationChannel(
           channelKey: 'habit_notifications_rysolve',
           channelName: 'Habit notifications',
@@ -66,7 +65,6 @@ Future<void> _setupDailyNotification(int id, TimeOfDay timeOfDay, String title,
       title: title,
       body: desc,
       wakeUpScreen: true,
-      criticalAlert: true,
       category: NotificationCategory.Reminder,
     ),
     schedule: NotificationCalendar(

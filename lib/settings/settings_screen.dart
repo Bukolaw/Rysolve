@@ -94,11 +94,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
       ) {
         return LoaderOverlay(
           useDefaultLoading: false,
-          overlayWidget: const Center(
-            child: CircularProgressIndicator(
-              color: HabitColors.primary,
-            ),
-          ),
           child: Scaffold(
             appBar: AppBar(
               title: const Text(

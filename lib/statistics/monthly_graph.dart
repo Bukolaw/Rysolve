@@ -177,7 +177,6 @@ class _MonthlyGraphState extends State<MonthlyGraph> {
   BarTouchData get barTouchData => BarTouchData(
         enabled: false,
         touchTooltipData: BarTouchTooltipData(
-          tooltipBgColor: Colors.transparent,
           getTooltipItem: (
             BarChartGroupData group,
             int groupIndex,
@@ -259,10 +258,10 @@ class _MonthlyGraphState extends State<MonthlyGraph> {
         text = '';
     }
     return SideTitleWidget(
-      axisSide: meta.axisSide,
-      space: 4,
-      child: Text(text, style: style),
-    );
+  meta: meta,
+  space: 4,
+  child: Text(text, style: style),
+);
   }
 
   FlBorderData get borderData => FlBorderData(

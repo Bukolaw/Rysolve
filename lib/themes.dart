@@ -10,7 +10,9 @@ class rysolveTheme {
     return ThemeData(
       useMaterial3: true,
       scaffoldBackgroundColor: const Color(0xFFFAFAFA),
-      dialogTheme: const DialogTheme(surfaceTintColor: Colors.white),
+      dialogTheme: const DialogThemeData(
+        surfaceTintColor: Colors.white,
+        ),
       brightness: Brightness.light,
       primaryColor: const Color(0xFF09BF30),
       colorScheme: ColorScheme.light(
@@ -34,7 +36,9 @@ class rysolveTheme {
     return ThemeData(
       useMaterial3: true,
       scaffoldBackgroundColor: const Color(0xFF303030),
-      dialogTheme: const DialogTheme(surfaceTintColor: Colors.white),
+      dialogTheme: const DialogThemeData(
+  surfaceTintColor: Colors.white,
+),
       primaryColor: Colors.grey,
       fontFamily: GoogleFonts.nunito().fontFamily,
       switchTheme: SwitchThemeData(
