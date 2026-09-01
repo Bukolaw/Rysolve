@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rysolve/analytics_service.dart';
 import 'package:rysolve/constants.dart';
 import 'package:rysolve/habits/habits_manager.dart';
 import 'package:rysolve/model/habit_data.dart';
@@ -17,8 +18,7 @@ class EditHabitScreen extends StatefulWidget {
     );
   }
 
-  const EditHabitScreen({Key? key, required this.habitData}) : super(key: key);
-
+ const EditHabitScreen({super.key, required this.habitData});
   final HabitData? habitData;
 
   @override
@@ -99,11 +99,13 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
               ),
               color: HabitColors.red,
               tooltip: 'Delete',
-              onPressed: () {
+              onPressed: () async {
                 Navigator.of(context).pop();
                 if (widget.habitData != null) {
                   Provider.of<HabitsManager>(context, listen: false)
                       .deleteHabit(widget.habitData!.id!);
+
+                      await AnalyticsService.goalDeleted();
                 }
               },
             ),
@@ -111,7 +113,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
       ),
       floatingActionButton: Builder(builder: (BuildContext context) {
         return FloatingActionButton(
-          onPressed: () {
+          onPressed: () async {
             if (title.text.isNotEmpty) {
               if (widget.habitData != null) {
                 Provider.of<HabitsManager>(context, listen: false).editHabit(
@@ -133,6 +135,8 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                     accountant: accountant.text.toString(),
                   ),
                 );
+
+                await AnalyticsService.goalEdited();
               } else {
                 Provider.of<HabitsManager>(context, listen: false).addHabit(
                   title.text.toString(),
@@ -148,6 +152,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                   showSanction,
                   accountant.text.toString(),
                 );
+                await AnalyticsService.goalCreated();
               }
               Navigator.of(context).pop();
             } else {
@@ -187,13 +192,13 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                   child: Row(
                     children: <Widget>[
                       Checkbox(
-                        onChanged: (bool? value) {
-                          setState(() {
-                            twoDayRule = value!;
-                          });
-                        },
-                        value: twoDayRule,
-                      ),
+  onChanged: (bool? value) {
+    setState(() {
+      twoDayRule = value!;
+    });
+  },
+  value: twoDayRule,
+),
                       const Text("Use Two day rule"),
                       const Padding(
                         padding: EdgeInsets.fromLTRB(10, 0, 0, 0),

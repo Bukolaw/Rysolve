@@ -1,3 +1,4 @@
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
@@ -26,9 +27,29 @@ class HabitsScreen extends StatefulWidget {
 }
 
 class _HabitsScreenState extends State<HabitsScreen> {
-  @override
+    BannerAd? _bannerAd;
+    bool _isBannerAdReady = false;
+    @override
   void initState() {
     super.initState();
+        _bannerAd = BannerAd(
+          adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+          request: const AdRequest(),
+          size: AdSize.banner,
+          listener: BannerAdListener(
+            onAdLoaded: (Ad ad) {
+              setState(() {
+                _isBannerAdReady = true;
+              });
+            },
+            onAdFailedToLoad: (Ad ad, LoadAdError error) {
+              ad.dispose();
+              debugPrint('Banner ad failed to load: $error');
+            },
+          ),
+        );
+
+        _bannerAd!.load();
     Future.delayed(const Duration(seconds: 0), () async {
       showNotificationDialog(context);
     });
@@ -80,8 +101,15 @@ class _HabitsScreenState extends State<HabitsScreen> {
               ),
             ],
           ),
-          body: const CalendarColumn(), //CalendarColumn(),
-          floatingActionButton: FloatingActionButton(
+                    body: const CalendarColumn(),
+                    bottomNavigationBar: _isBannerAdReady
+                        ? SizedBox(
+                            width: _bannerAd!.size.width.toDouble(),
+                            height: _bannerAd!.size.height.toDouble(),
+                            child: AdWidget(ad: _bannerAd!),
+                          )
+                        : null,
+                    floatingActionButton: FloatingActionButton(
             onPressed: () {
               Provider.of<AppStateManager>(context, listen: false)
                   .goCreateHabit(true);
@@ -99,6 +127,11 @@ class _HabitsScreenState extends State<HabitsScreen> {
     );
   }
 
+    @override
+    void dispose() {
+      _bannerAd?.dispose();
+      super.dispose();
+    }
   void showNotificationDialog(BuildContext context) {
     AwesomeNotifications().isNotificationAllowed().then((isAllowed) {
       if (!isAllowed) {

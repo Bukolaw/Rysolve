@@ -77,3 +77,18 @@ Future<void> _setupDailyNotification(int id, TimeOfDay timeOfDay, String title,
         timeZone: localTimeZone),
   );
 }
+
+Future<void> showPushNotification(
+  String title,
+  String body,
+) async {
+  await AwesomeNotifications().createNotification(
+    content: NotificationContent(
+      id: DateTime.now().millisecondsSinceEpoch.remainder(100000),
+      channelKey: 'app_notifications_rysolve',
+      title: title,
+      body: body,
+      notificationLayout: NotificationLayout.Default,
+    ),
+  );
+}

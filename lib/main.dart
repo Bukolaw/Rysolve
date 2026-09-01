@@ -1,3 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 // ignore_for_file: camel_case_types
 
 import 'package:flutter/foundation.dart';
@@ -11,8 +15,50 @@ import 'package:rysolve/notifications.dart';
 import 'package:rysolve/settings/settings_manager.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+@pragma('vm:entry-point')
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+}
+
+Future<void> setupFirebaseMessaging() async {
+  final messaging = FirebaseMessaging.instance;
+
+  await messaging.requestPermission(
+    alert: true,
+    badge: true,
+    sound: true,
+  );
+
+ FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+   final notification = message.notification;
+
+   if (notification != null) {
+     showPushNotification(
+       notification.title ?? 'Rysolve',
+       notification.body ?? '',
+     );
+   }
+ });
+}
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+await MobileAds.instance.initialize();
+
+  FirebaseMessaging.onBackgroundMessage(
+    firebaseMessagingBackgroundHandler,
+  );
+
+  await setupFirebaseMessaging();
+
   addLicenses();
+
   runApp(
     const rysolve(),
   );
